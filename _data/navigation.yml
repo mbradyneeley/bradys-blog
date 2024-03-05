@@ -1,6 +1,8 @@
 - name: Home
-  link: /
+  link: /bradys-blog
 - name: About
   link: /bradys-blog/about.html
-- name: Blog
+- name: Data Science Blog
   link: /bradys-blog/blog.html
+- name: Fly Fishing
+  link: /bradys-blog/flyfishing.html
