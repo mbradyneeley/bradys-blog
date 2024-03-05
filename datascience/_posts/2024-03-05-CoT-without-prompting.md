@@ -13,6 +13,8 @@ Traditional decoding methods, like greedy decoding, often fall short when it com
 
 ![Illustration of CoT decoding](/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig1.png)
 
+<img src="{{site.baseurl}}/assets/images/CoT-without-prompting/Fig1.png">
+
 ### How It Works
 
 The method involves using a standard QA format to prompt the language model. Instead of relying solely on the top-1 greedy path, the CoT-decoding examines various top-k alternatives, which has been shown to bring forth natural CoT reasoning patterns.
