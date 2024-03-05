@@ -5,25 +5,25 @@ author: brady
 
 # Can Pre-Trained Language Models Reason Without Complex Prompts?
 
-Recent research indicates that pre-trained language models (LLMs) have the inherent ability to engage in Chain of Thought (CoT) reasoning without the need for complex prompt engineering. This finding, stemming from a paper titled "Chain of Thought Prompting Elicits Reasoning in Large Language Models," explores an innovative decoding strategy that could democratize sophisticated language model capabilities.
+Recent research indicates that pre-trained language models (LLMs) have the inherent ability to engage in Chain of Thought (CoT) reasoning without the need for complex prompt engineering. This finding, stemming from a paper titled "Chain of Thought Prompting Elicits Reasoning in Large Language Models," explores an innovative decoding strategy that could democratize sophisticated language model capabilities. [Here is a link to the file from Google Research on arxiv](https://arxiv.org/pdf/2402.10200.pdf)
 
 ### The Shift From Greedy to CoT Decoding
 
 Traditional decoding methods, like greedy decoding, often fall short when it comes to eliciting CoT reasoning from LLMs. The new approach, termed CoT-decoding, diverts from this path and leverages alternative tokens in the top-k predictions to uncover reasoning patterns that would otherwise remain hidden. This strategy not only sidesteps the need for complex prompts but could potentially increase unsupervised performance, making advanced reasoning accessible without the need for fine-tuning.
 
-![Illustration of CoT decoding](/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig1.png)
+![Illustration of CoT decoding](assets/images/CoT-without-prompting/Fig1.png)
 
 ### How It Works
 
 The method involves using a standard QA format to prompt the language model. Instead of relying solely on the top-1 greedy path, the CoT-decoding examines various top-k alternatives, which has been shown to bring forth natural CoT reasoning patterns.
 
-![Examples of increased confidence across top-k paths](/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig2.png)
+![Examples of increased confidence across top-k paths](assets/images/CoT-without-prompting/Fig2.png)
 
 ### Insights and Probability Assessments
 
 One of the key components of CoT-decoding is an equation used to calculate the corresponding probability for each decoding path, which favors tokens with the highest post-softmax probabilities.
 
-![Equation for calculating the corresponding probability for each decoding path](/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig3.png)
+![Equation for calculating the corresponding probability for each decoding path](assets/images/CoT-without-prompting/Fig3.png)
 
 A noteworthy heuristic from the research is the preference for longer decoding paths, which often contain CoTs, especially in math problems. However, it's been observed that ensembling decoding paths frequently results in incorrect answers. To counter this, a weighted aggregation method is used to determine the most likely answer.
 
@@ -31,7 +31,7 @@ A noteworthy heuristic from the research is the preference for longer decoding p
 
 The research demonstrates a notable improvement in accuracy when CoT decoding is employed, even without fine-tuning.
 
-![Performance results on math reasoning tasks with CoT decoding](/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig4.png)
+![Performance results on math reasoning tasks with CoT decoding](assets/images/CoT-without-prompting/Fig4.png)
 
 ### Implications and Limitations
 
