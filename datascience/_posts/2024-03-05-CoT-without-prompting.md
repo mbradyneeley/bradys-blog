@@ -11,7 +11,7 @@ Recent research indicates that pre-trained language models (LLMs) have the inher
 
 Traditional decoding methods, like greedy decoding, often fall short when it comes to eliciting CoT reasoning from LLMs. The new approach, termed CoT-decoding, diverts from this path and leverages alternative tokens in the top-k predictions to uncover reasoning patterns that would otherwise remain hidden. This strategy not only sidesteps the need for complex prompts but could potentially increase unsupervised performance, making advanced reasoning accessible without the need for fine-tuning.
 
-![Illustration of CoT decoding](/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig1.png)
+![Illustration of CoT decoding]({{site.baseurl}}/assets/images/CoT-without-prompting/Fig1.png)
 
 <img src="{{site.baseurl}}/assets/images/CoT-without-prompting/Fig1.png">
 
