@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cot Without Prompting</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+  
+    <a href="/bradys-blog" >Home</a>
+  
+    <a href="/bradys-blog/about.html" >About</a>
+  
+    <a href="/bradys-blog/blog.html" >Data Science Blog</a>
+  
+    <a href="/bradys-blog/flyfishing.html" >Fly Fishing</a>
+  
+</nav>
+    <h1>Cot Without Prompting</h1>
+<p>05 Mar 2024 - brady</p>
+
+<h1 id="can-pre-trained-language-models-reason-without-complex-prompts">Can Pre-Trained Language Models Reason Without Complex Prompts?</h1>
+
+<p>Recent research indicates that pre-trained language models (LLMs) have the inherent ability to engage in Chain of Thought (CoT) reasoning without the need for complex prompt engineering. This finding, stemming from a paper titled “Chain of Thought Prompting Elicits Reasoning in Large Language Models,” explores an innovative decoding strategy that could democratize sophisticated language model capabilities.</p>
+
+<h3 id="the-shift-from-greedy-to-cot-decoding">The Shift From Greedy to CoT Decoding</h3>
+
+<p>Traditional decoding methods, like greedy decoding, often fall short when it comes to eliciting CoT reasoning from LLMs. The new approach, termed CoT-decoding, diverts from this path and leverages alternative tokens in the top-k predictions to uncover reasoning patterns that would otherwise remain hidden. This strategy not only sidesteps the need for complex prompts but could potentially increase unsupervised performance, making advanced reasoning accessible without the need for fine-tuning.</p>
+
+<p><img src="/assets/images/CoT-without-prompting/Fig1.png" alt="Illustration of CoT decoding" /></p>
+
+<h3 id="how-it-works">How It Works</h3>
+
+<p>The method involves using a standard QA format to prompt the language model. Instead of relying solely on the top-1 greedy path, the CoT-decoding examines various top-k alternatives, which has been shown to bring forth natural CoT reasoning patterns.</p>
+
+<p><img src="/assets/images/CoT-without-prompting/Fig2.png" alt="Examples of increased confidence across top-k paths" /></p>
+
+<h3 id="insights-and-probability-assessments">Insights and Probability Assessments</h3>
+
+<p>One of the key components of CoT-decoding is an equation used to calculate the corresponding probability for each decoding path, which favors tokens with the highest post-softmax probabilities.</p>
+
+<p><img src="/assets/images/CoT-without-prompting/Fig3.png" alt="Equation for calculating the corresponding probability for each decoding path" /></p>
+
+<p>A noteworthy heuristic from the research is the preference for longer decoding paths, which often contain CoTs, especially in math problems. However, it’s been observed that ensembling decoding paths frequently results in incorrect answers. To counter this, a weighted aggregation method is used to determine the most likely answer.</p>
+
+<h3 id="empirical-results">Empirical Results</h3>
+
+<p>The research demonstrates a notable improvement in accuracy when CoT decoding is employed, even without fine-tuning.</p>
+
+<p><img src="/assets/images/CoT-without-prompting/Fig4.png" alt="Performance results on math reasoning tasks with CoT decoding" /></p>
+
+<h3 id="implications-and-limitations">Implications and Limitations</h3>
+
+<p>While the results are promising, CoT paths are less prevalent in tasks that deviate from the model’s training distribution. The research suggests that while few-shot learning or fine-tuning could mitigate this, it moves away from the paper’s aim of avoiding such strategies.</p>
+
+<h3 id="final-thoughts">Final Thoughts</h3>
+
+<p>The paper highlights the significance of the initial word predicted by the model, as the right choice can naturally lead to a CoT path. This underlines the importance of the pretraining dataset and suggests that tasks outside the domain might not naturally induce CoT paths.</p>
+
+<p>This groundbreaking research presents a potential shift in how we can harness the reasoning capabilities of LLMs, making advanced model reasoning more accessible and less dependent on elaborate prompting strategies or model fine-tuning.</p>
+
+  </body>
+</html>
