@@ -28,19 +28,19 @@
 
 <p>Traditional decoding methods, like greedy decoding, often fall short when it comes to eliciting CoT reasoning from LLMs. The new approach, termed CoT-decoding, diverts from this path and leverages alternative tokens in the top-k predictions to uncover reasoning patterns that would otherwise remain hidden. This strategy not only sidesteps the need for complex prompts but could potentially increase unsupervised performance, making advanced reasoning accessible without the need for fine-tuning.</p>
 
-<p><img src="/mnt/atlas_local/brady/home/projects/personal_webpage/assets/images/CoT-without-prompting/Fig1.png" alt="Illustration of CoT decoding" /></p>
+<p><img src="/assets/images/CoT-without-prompting/Fig1.png" alt="Illustration of CoT decoding" /></p>
 
 <h3 id="how-it-works">How It Works</h3>
 
 <p>The method involves using a standard QA format to prompt the language model. Instead of relying solely on the top-1 greedy path, the CoT-decoding examines various top-k alternatives, which has been shown to bring forth natural CoT reasoning patterns.</p>
 
-<p><img src="assets/images/CoT-without-prompting/Fig2.png" alt="Examples of increased confidence across top-k paths" /></p>
+<p><img src="/assets/images/CoT-without-prompting/Fig2.png" alt="Examples of increased confidence across top-k paths" /></p>
 
 <h3 id="insights-and-probability-assessments">Insights and Probability Assessments</h3>
 
 <p>One of the key components of CoT-decoding is an equation used to calculate the corresponding probability for each decoding path, which favors tokens with the highest post-softmax probabilities.</p>
 
-<p><img src="assets/images/CoT-without-prompting/Fig3.png" alt="Equation for calculating the corresponding probability for each decoding path" /></p>
+<p><img src="/assets/images/CoT-without-prompting/Fig3.png" alt="Equation for calculating the corresponding probability for each decoding path" /></p>
 
 <p>A noteworthy heuristic from the research is the preference for longer decoding paths, which often contain CoTs, especially in math problems. However, it’s been observed that ensembling decoding paths frequently results in incorrect answers. To counter this, a weighted aggregation method is used to determine the most likely answer.</p>
 
@@ -48,7 +48,7 @@
 
 <p>The research demonstrates a notable improvement in accuracy when CoT decoding is employed, even without fine-tuning.</p>
 
-<p><img src="assets/images/CoT-without-prompting/Fig4.png" alt="Performance results on math reasoning tasks with CoT decoding" /></p>
+<p><img src="/assets/images/CoT-without-prompting/Fig4.png" alt="Performance results on math reasoning tasks with CoT decoding" /></p>
 
 <h3 id="implications-and-limitations">Implications and Limitations</h3>
 
