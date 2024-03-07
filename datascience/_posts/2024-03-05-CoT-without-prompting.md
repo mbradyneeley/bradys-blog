@@ -18,6 +18,7 @@ Traditional decoding methods, like greedy decoding, often fall short when it com
 The method involves using a standard QA format to prompt the language model. Instead of relying solely on the top-1 greedy path, the CoT-decoding examines various top-k alternatives, which has been shown to bring forth natural CoT reasoning patterns.
 
 ![Examples of increased confidence across top-k paths]({{site.baseurl}}/assets/images/CoT-without-prompting/Fig2.png)
+<img src="{{site.baseurl}}/assets/images/CoT-without-prompting/Fig2.png" alt="Fig 2" style="width: 50%;">
 
 ### Insights and Probability Assessments
 
