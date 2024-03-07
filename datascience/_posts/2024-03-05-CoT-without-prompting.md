@@ -3,7 +3,7 @@ layout: post
 author: brady
 ---
 
-# Can Pre-Trained Language Models Reason Without Complex Prompts?
+## Can Pre-Trained Language Models Reason Without Complex Prompts?
 
 Recent research indicates that pre-trained language models (LLMs) have the inherent ability to engage in Chain of Thought (CoT) reasoning without the need for complex prompt engineering. This finding, stemming from a paper titled "Chain of Thought Prompting Elicits Reasoning in Large Language Models," explores an innovative decoding strategy that could democratize sophisticated language model capabilities. [Here is a link to the file from Google Research on arxiv](https://arxiv.org/pdf/2402.10200.pdf)
 
