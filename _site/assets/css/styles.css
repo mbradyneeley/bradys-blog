@@ -1,5 +1,18 @@
+.nav-item {
+  color: rgb(43, 91, 158); /* Your original color */
+  transition: color 0.3s ease; /* This enables a smooth transition for the color property */
+}
+
+/* Change color on hover */
+.nav-item:hover {
+  color: rgb(119, 166, 233); /* Replace with the color you want on hover */
+}
+
+/* Style for the current page's nav item */
 .current {
-  color: green;
+  color: rgb(119, 166, 233); /* Sets a different color for the current nav item */
+  font-weight: bold; /* Makes the text bold */
+  text-decoration: none; /* Removes any underline from the links */
 }
 
 /*# sourceMappingURL=styles.css.map */
